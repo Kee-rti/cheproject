@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rain Water harvesting</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  font-family: myriad pro;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.logo img {
+  width: 70%;
+}
+.main {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    rgba(15, 128, 194, 0.2),
+    rgba(15, 128, 194, 0.2)
+  );
+}
+.navbar {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navlist {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navlist li {
+  list-style: none;
+  padding: 30px;
+  display: inline-block;
+}
+.navlist li a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  transition: 0.3s;
+}
+.navlist li a:hover {
+  text-decoration: none;
+  color: #06310e;
+  font-size: 25px;
+}
+.rightnav {
+  width: 50%;
+  text-align: right;
+  padding: 30px;
+}
+#search {
+  padding: 5px;
+  font-size: 17px;
+  border-radius: 20px;
+}
+button {
+  padding: 5px;
+  font-size: 17px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btnsm {
+  color: black;
+  background-color:aliceblue;
+  background: 2px solid black;
+  font-size: 15px;
+  padding: 7px;
+}
+
+.lg {
+  font-size: 120px;
+  font-weight: 600;
+  margin-top: 20px;
+  text-align: left;
+  transition: 0.3s;
+  margin-left: 10px;
+  color: black;
+  text-shadow: 3px 3px 3px white;
+}
+.lg:hover {
+  -webkit-text-stroke: 3px black;
+}
+.sm {
+  font-size: 30px;
+  display: inline-block;
+  border: 2px solid black;
+  color: black;
+  border-radius: 20px;
+  padding: 14px 60px;
+  margin-top: 20px;
+  transition: 0.3s;
+  margin-left: 10px;
+  box-shadow: 2px 2px 2px;
+}
+.sm:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.bgv {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media (min-aspect-ratio: 16/9) {
+  .bgv {
+    width: 100%;
+    height: auto;
+  }
+}
+#learn {
+  position: relative;
+}
+@media (min-aspect-ratio: 16/9) {
+  .lrnv {
+    width: 100%;
+    height: auto;
+  }
+}
+.box1,
+.box2,
+.box3,
+.box4 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  );
+  padding: 20px;
+  text-align: center;
+  width: 350px;
+  border-radius: 200px;
+  box-shadow: 2px 2px 2px;
+  transition: 0.3s;
+}
+.box1:hover {
+    font-weight:bolder;
+    cursor: pointer;
+  }
+.box2:hover {
+    font-weight:bolder;
+    cursor: pointer;
+  }
+.box3:hover {
+    font-weight:bolder;
+    cursor: pointer;
+  }
+.box4:hover {
+    font-weight:bolder;
+    cursor: pointer;
+  }
+.box1 {
+  top: 200px;
+}
+.box2 {
+  top: 300px;
+}
+.box3 {
+  top: 450px;
+}
+.box4 {
+  top: 550px;
+}
+.box2,
+.box4 {
+  margin-top: 20px;
+}
+.box1 p,
+.box2 p,
+.box3 p,
+.box4 p {
+  margin: 0;
+  font-size: 30px;
+  color:black;
+  text-shadow: 1px 1px 3px white;
+}
+.lrnv {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.lrnv::-webkit-media-controls {
+  display: none !important;
+}
+
+.lrnv::-webkit-media-controls-play-button,
+.lrnv::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+.REG{
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+    text-align: center;
+    padding: 20px;
+}
+
+.rgt label{
+    font-size: 30px;
+    padding: 30px;
+    display: block;
+    text-align:center;
+}
+.rgt input{
+    border-radius: 100px;
+    box-shadow: 1px 1px 1px black;
+    font-size: 30px;
+    padding:8px;
+    background-color:#DEDEDE;
+    box-shadow: 2px 2px 6px;
+}
+.rgt{
+    width: 50%;
+}
+.sub{
+    text-align: center;
+    border-radius: 200px;
+    border: 2px solid black;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 15px;
+    width: 200px;
+    font-size: 25px;
+    margin-left: 200px;
+    background-color: aliceblue;
+    box-shadow: 2px 2px 4px;
+}
+.help{
+    position: relative;    
+    text-align:center;
+    bottom: 600px;
+    font-size: 95px;
+    margin-left: 50%;
+}
+#Volunteer{
+    height: 800px;
+    background-color:gray;
+    margin: 0;
+}
+#ask{
+    height: 400px;
+    background-color: #DEDEDE;
+}
+#ask p{
+    position: relative;
+    font-size: 60px;
+    padding: 30px;
+    margin-bottom: 40px;
+    width: 50%;
+    text-align: center;
+    top: 130px;
+}
+textarea{
+    position: relative;
+    padding: 10px;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 50%;
+    box-shadow: 2px 2px 6px;
+    bottom: 90px;
+    left: 20px;
+}
+.send{
+    position: relative;
+    padding: 10px;
+    width: 100px;
+    font-size: 20px;
+    left: 100px;
+    bottom: 200px;
+    background-color: azure;
+    box-shadow: 2px 2px 4px;
+}
+footer{
+    padding: 30px;
+    text-align: center;
+    background-color: aliceblue;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <video
+        src="production_id_5040711 (1080p).mp4"
+        muted
+        autoplay
+        loop
+        plays-inline
+        class="bgv"
+      ></video>
+      <nav class="navbar">
+        <ul class="navlist">
+          <div class="logo">
+            <img src="save-water-logo-vector-16-removebg-preview.png" alt="logo" />
+          </div>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#learn">Learn</a></li>
+          <li><a href="#Volunteer">Volunteer</a></li>
+          <li><a href="#ask">Ask Questions</a></li>
+        </ul>
+        <div class="rightnav">
+          <input type="text" name="search" id="search" class="btnsm"/>
+          <button class="btnsm">Search</button>
+        </div>
+      </nav>
+      <div class="heading">
+        <h1 class="lg">
+          Rain Water <br />
+          Harvesting.
+        </h1>
+        <p class="sm"><a href="homepage.html">What is it?</a></p>
+      </div>
+    </div>
+  <section id="learn">
+      <div>
+        <video
+        src="pexels-sebastián-muriel-7843122 (1080p).mp4"
+        muted
+        autoplay
+        loop
+        plays-inline
+        class="lrnv"
+      ></video>
+      <div class="box1">
+        <p><a href="why.html">Why should I harvest rain water?</a></p>
+      </div>
+      <div class="box2">
+        <p><a href="methods.html">Methods of Rain Water Harvesting.</a></p>
+      </div>
+      <div class="box3">
+        <p><a href="howcani.html">How can I harvest Rain Water?</a></p>
+      </div>
+      <div class="box4">
+        <p><a href="use.html">How can I use Rain Water?</a></p>
+      </div>
+      </div>
+  </section>
+  <section id="Volunteer">
+    <p class="REG">Volunteer</p>
+    <form action="HP.html" class="rgt">
+      <label name="Name">Name:<br></Name:br><input type="text" ></label>
+      <label name="Email">Email:<br><input type="email"></label>
+      <label name="no.">Phone Number:<br><input type="number"></label>
+      <button type="submit" class="sub">Submit</button>
+    </form>
+    <div class="help">
+      <p>Help us orginizing seminars to spread awareness  </p>
+    </div>
+  </section>
+  <section id="ask">
+    <p>Any Questions?</p>
+    <textarea name="ask" id="que" cols="30" rows="10" placeholder="Type here"></textarea>
+    <button type="submit" class="send">Send</button>
+  </section>
+  <footer>&copy; Rain Water Harvesting</footer>
+  </body>
+</html>
